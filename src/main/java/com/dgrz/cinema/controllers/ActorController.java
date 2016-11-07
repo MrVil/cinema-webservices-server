@@ -15,8 +15,11 @@ import java.util.List;
 @Controller
 public class ActorController {
 
-    @RequestMapping(path = "/api/actor/{id}", method = RequestMethod.GET)
+    @RequestMapping(path = "/api/actors/{id}", method = RequestMethod.GET)
     public Actor getActor(@RequestParam(value="id") int id){
+
+        ActorService as = new ActorService();
+        as.getActor(id);
 
         return null;
     }
@@ -24,21 +27,38 @@ public class ActorController {
     @RequestMapping(path = "/api/actors/", method = RequestMethod.GET)
     public List<Actor> getActors(){
 
+        ActorService as = new ActorService();
+        as.getActors();
+
         return null;
     }
 
-    @RequestMapping(path = "/api/actor/{id}", method = RequestMethod.PUT)
+    @RequestMapping(path = "/api/actors/{id}", method = RequestMethod.PUT)
     public void updateActor(@RequestParam(value="id") int id){
 
+        ActorService as = new ActorService();
+        as.updateActor(id);
+
         return;
     }
 
 
-    @RequestMapping(path = "/api/actor/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(path = "/api/actors/{id}", method = RequestMethod.DELETE)
     public void deleteActor(@RequestParam(value="id") int id){
 
+        ActorService as = new ActorService();
+        as.deleteActor(id);
+
         return;
     }
 
+    @RequestMapping(path = "/api/actors/", method = RequestMethod.POST)
+    public void deleteActor(@RequestParam(value="id") int id){
+
+        ActorService as = new ActorService();
+        as.insertActor(id);
+
+        return;
+    }
 
 }
