@@ -1,6 +1,7 @@
 package com.dgrz.cinema.controllers;
 
 import com.dgrz.cinema.entities.Actor;
+import com.dgrz.cinema.services.ActorService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
