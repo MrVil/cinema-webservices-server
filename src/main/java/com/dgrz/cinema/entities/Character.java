@@ -44,6 +44,6 @@ public class Character {
 
 
 class CharacterID implements Serializable {
-    int nbFilm;
-    int nbActeur;
+    int nbMovie;
+    int nbActor;
 }
