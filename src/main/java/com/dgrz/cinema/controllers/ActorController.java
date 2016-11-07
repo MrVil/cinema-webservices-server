@@ -2,6 +2,7 @@ package com.dgrz.cinema.controllers;
 
 import com.dgrz.cinema.entities.Actor;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -33,11 +34,11 @@ public class ActorController {
         return null;
     }
 
-    @RequestMapping(path = "/api/actors/{id}", method = RequestMethod.PUT)
-    public void updateActor(@RequestParam(value="id") int id){
+    @RequestMapping(path = "/api/actors/", method = RequestMethod.PUT)
+    public void updateActor(@RequestBody Actor actor){
 
         ActorService as = new ActorService();
-        as.updateActor(id);
+        as.updateActor(actor);
 
         return;
     }
@@ -53,10 +54,10 @@ public class ActorController {
     }
 
     @RequestMapping(path = "/api/actors/", method = RequestMethod.POST)
-    public void deleteActor(@RequestParam(value="id") int id){
+    public void insertActor(@RequestBody Actor actor){
 
         ActorService as = new ActorService();
-        as.insertActor(id);
+        as.insertActor(actor);
 
         return;
     }
