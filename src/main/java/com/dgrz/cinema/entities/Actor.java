@@ -24,7 +24,7 @@ public class Actor implements Serializable {
     @Column(nullable = false)
     private String birthDate;
 
-    @Column(nullable = true)
+    @Column
     private String deathDate;
 
     public String getLastNameAct() {
