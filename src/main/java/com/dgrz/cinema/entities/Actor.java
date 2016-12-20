@@ -13,7 +13,7 @@ public class Actor implements Serializable {
 
     @Id
     @GeneratedValue
-    private int id;
+    private long id;
 
     @ManyToOne
     private Category category;

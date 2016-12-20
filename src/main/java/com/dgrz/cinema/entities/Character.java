@@ -9,15 +9,15 @@ import java.io.Serializable;
 @Entity @IdClass(CharacterID.class) @Table(name = "character")
 public class Character {
     @Id
-    private int nbMovie;
+    private long nbMovie;
 
     @Id
-    private int nbActor;
+    private long nbActor;
 
     @Column(nullable = false)
     private String nameCharacter;
 
-    public int getNbMovie() {
+    public long getNbMovie() {
         return nbMovie;
     }
 
@@ -25,7 +25,7 @@ public class Character {
         this.nbMovie = nbMovie;
     }
 
-    public int getNbActor() {
+    public long getNbActor() {
         return nbActor;
     }
 
@@ -44,6 +44,6 @@ public class Character {
 
 
 class CharacterID implements Serializable {
-    int nbMovie;
-    int nbActor;
+    long nbMovie;
+    long nbActor;
 }
