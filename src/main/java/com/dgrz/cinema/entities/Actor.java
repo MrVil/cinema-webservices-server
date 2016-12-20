@@ -6,7 +6,6 @@ import javax.persistence.*;
 /**
  * Created by thomasd on 10/10/16.
  */
-
 @Entity
 @Table(name = "actor")
 public class Actor implements Serializable {
@@ -14,9 +13,6 @@ public class Actor implements Serializable {
     @Id
     @GeneratedValue
     private long id;
-
-    @ManyToOne
-    private Category category;
 
     @Column(nullable = false)
     private String lastNameAct;

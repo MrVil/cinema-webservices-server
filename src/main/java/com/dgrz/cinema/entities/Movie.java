@@ -2,6 +2,8 @@ package com.dgrz.cinema.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by thomasd on 10/10/16
@@ -12,7 +14,11 @@ public class Movie implements Serializable {
 
     @Id
     @GeneratedValue
-    private int nbMovie;
+    private long id;
+
+    @Column
+    @ManyToMany(mappedBy="movies")
+    private List<Category> categories = new ArrayList<>();
 
     @Column(nullable = false)
     private String title;

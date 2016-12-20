@@ -10,7 +10,7 @@ public class Realisator {
 
     @Id
     @GeneratedValue
-    private int nbRea;
+    private long id;
 
     @Column(nullable = false)
     private String LastNamerea;
@@ -18,12 +18,12 @@ public class Realisator {
     @Column(nullable = false)
     private String FirstNameRea;
 
-    public int getNbRea() {
-        return nbRea;
+    public long getNbRea() {
+        return id;
     }
 
     public void setNbRea(int nbRea) {
-        this.nbRea = nbRea;
+        this.id = nbRea;
     }
 
     public String getLastNamerea() {
