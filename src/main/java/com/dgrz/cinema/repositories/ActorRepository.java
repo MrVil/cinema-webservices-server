@@ -15,4 +15,6 @@ import java.util.List;
 public interface ActorRepository extends PagingAndSortingRepository<Actor, Long>{
 
     List<Actor> findById(@Param("id") int id);
+
+    List<Actor> removeById(@Param("id") int id);
 }
