@@ -13,7 +13,10 @@ public class Actor implements Serializable {
 
     @Id
     @GeneratedValue
-    private int nbAct;
+    private int id;
+
+    @ManyToOne
+    private Category category;
 
     @Column(nullable = false)
     private String lastNameAct;

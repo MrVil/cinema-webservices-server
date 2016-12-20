@@ -11,7 +11,7 @@ import java.util.List;
  * Created by thomasd on 07/11/16.
  */
 
-@RepositoryRestResource(collectionResourceRel = "actor", path = "actor")
+@RepositoryRestResource(collectionResourceRel = "Actor", path = "actor")
 public interface ActorRepository extends PagingAndSortingRepository<Actor, Long>{
 
     List<Actor> findById(@Param("id") int id);

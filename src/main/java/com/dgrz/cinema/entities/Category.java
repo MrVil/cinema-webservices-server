@@ -7,22 +7,22 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "categorie")
-public class Categorie {
+public class Category {
 
     @Id
     @GeneratedValue
-    private int CodeCat;
+    private int id;
 
     @Column(nullable = false)
     private String LabelCat;
 
 
     public int getCodeCat() {
-        return CodeCat;
+        return id;
     }
 
     public void setCodeCat(int codeCat) {
-        CodeCat = codeCat;
+        id = codeCat;
     }
 
     public String getLabelCat() {
