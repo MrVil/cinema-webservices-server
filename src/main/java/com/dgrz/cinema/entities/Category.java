@@ -32,6 +32,6 @@ public class Category {
     public String getLabelCat() { return labelCat; }
 
     public void setLabelCat(String labelCat) {
-        labelCat = labelCat;
+        this.labelCat = labelCat;
     }
 }
