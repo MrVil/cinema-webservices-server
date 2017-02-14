@@ -6,8 +6,8 @@ import java.io.Serializable;
 /**
  * Created by thomasd on 07/11/16.
  */
-@Entity @IdClass(CharacterID.class) @Table(name = "character")
-public class Character {
+@Entity @IdClass(CharacterID.class) @Table(name = "characterTest")
+public class CharacterTest {
     @Id
     private long nbMovie;
 

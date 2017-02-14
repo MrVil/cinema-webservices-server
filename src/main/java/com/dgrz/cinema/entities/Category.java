@@ -13,20 +13,21 @@ public class Category {
 
     @Id
     @GeneratedValue
+    @Column(name="ID")
     private long id;
 
     @Column
     private String labelCat;
 
-    @ManyToMany
+    @OneToMany(fetch = FetchType.LAZY, mappedBy="category_id", cascade = CascadeType.ALL)
     private List<Movie> movies = new ArrayList<>();
 
-    public long getCodeCat() {
+    public long getId() {
         return id;
     }
 
-    public void setCodeCat(int codeCat) {
-        id = codeCat;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getLabelCat() { return labelCat; }
@@ -34,4 +35,8 @@ public class Category {
     public void setLabelCat(String labelCat) {
         this.labelCat = labelCat;
     }
+
+    public List<Movie> getMovies() { return this.movies; }
+
+    public void setMovies(List<Movie> movies) {this.movies = movies;}
 }

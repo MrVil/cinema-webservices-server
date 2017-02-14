@@ -10,6 +10,7 @@ public class Realisator {
 
     @Id
     @GeneratedValue
+    @Column(name="ID")
     private long id;
 
     @Column(nullable = false)

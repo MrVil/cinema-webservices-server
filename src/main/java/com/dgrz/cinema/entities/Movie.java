@@ -14,11 +14,16 @@ public class Movie implements Serializable {
 
     @Id
     @GeneratedValue
+    @Column(name="ID")
     private long id;
 
-    @Column
-    @ManyToMany(mappedBy="movies")
-    private List<Category> categories = new ArrayList<>();
+    @ManyToOne
+    @JoinColumn(name = "CATEGORY_ID")
+    private Category category_id;
+
+    public Category getCategory() { return this.category_id; }
+
+    public void setCategory(Category category_id) { this.category_id = category_id; }
 
     @Column(nullable = false)
     private String title;
@@ -34,6 +39,10 @@ public class Movie implements Serializable {
 
     @Column(nullable = false)
     private int income;
+
+    public long getId() { return id; }
+
+    public void setId(long id) { this.id = id; }
 
     public String getTitle() {
         return title;
