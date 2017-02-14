@@ -2,28 +2,23 @@ package com.dgrz.cinema.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by thomasd on 10/10/16
  */
 @Entity
-@Table(name = "movie")
 public class Movie implements Serializable {
 
     @Id
-    @GeneratedValue
-    @Column(name="ID")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @ManyToOne
-    @JoinColumn(name = "CATEGORY_ID")
-    private Category category_id;
+    private Category category;
 
-    public Category getCategory() { return this.category_id; }
+    public Category getCategory() { return this.category; }
 
-    public void setCategory(Category category_id) { this.category_id = category_id; }
+    public void setCategory(Category category) { this.category = category; }
 
     @Column(nullable = false)
     private String title;
